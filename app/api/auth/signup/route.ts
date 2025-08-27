@@ -35,7 +35,7 @@ export async function POST(request: Request) {
         email,
         name,
         password: hashedPassword,
-        role: "ADMIN",
+        role: role as "ADMIN" | "MODERATOR" | "USER",
       },
     });
 
