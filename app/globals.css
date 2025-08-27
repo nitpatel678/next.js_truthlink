@@ -1,0 +1,155 @@
+/* Fonts: Montserrat (h1,h2), Poppins (h3-h6), Outfit (p) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base font fallbacks */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    /* Light (white) theme */
+    --background: 0 0% 100%;
+    --foreground: 220 15% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 10%;
+
+    /* Brand primary: Dark TruthLink green */
+    --primary: 158 64% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 160 20% 96%;
+    --secondary-foreground: 220 15% 15%;
+    --muted: 220 10% 96%;
+    --muted-foreground: 220 10% 40%;
+    --accent: 158 30% 94%;
+    --accent-foreground: 158 60% 20%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 158 64% 32%;
+    --success-foreground: 0 0% 100%;
+    --info: 200 85% 45%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 220 12% 88%;
+    --input: 220 12% 88%;
+    --ring: 158 64% 32%;
+
+    --chart-1: 158 64% 32%;
+    --chart-2: 160 45% 42%;
+    --chart-3: 165 35% 52%;
+    --chart-4: 200 60% 45%;
+    --chart-5: 43 74% 56%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 220 15% 6%;
+    --foreground: 0 0% 98%;
+    --card: 220 15% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 15% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 158 60% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 10% 14%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 220 10% 16%;
+    --muted-foreground: 220 10% 70%;
+    --accent: 158 35% 18%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 158 60% 40%;
+    --success-foreground: 0 0% 100%;
+    --info: 200 85% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 220 12% 20%;
+    --input: 220 12% 20%;
+    --ring: 158 60% 40%;
+
+    --chart-1: 158 60% 40%;
+    --chart-2: 160 45% 50%;
+    --chart-3: 165 35% 58%;
+    --chart-4: 200 70% 55%;
+    --chart-5: 43 74% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-[hsl(var(--border))];
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1, h2 {
+    font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  }
+  h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  }
+  p {
+    font-family: 'Outfit', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  }
+
+  h1 { font-weight: 800; }
+  h2 { font-weight: 700; }
+  h3, h4, h5, h6 { font-weight: 600; }
+  p { font-weight: 400; }
+}
+
+@layer components {
+  .rounded-app { border-radius: var(--radius); }
+  .rounded-app-md { border-radius: calc(var(--radius) + 2px); }
+  .rounded-app-lg { border-radius: calc(var(--radius) + 6px); }
+}
+
+:root {
+  color-scheme: light;
+}
+.dark {
+  color-scheme: dark;
+}
+
+/* global.css */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+a.truth-link {
+  color: #38bdf8;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+a.truth-link:hover {
+  text-decoration: underline;
+}
